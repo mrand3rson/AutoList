@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "manufacturerId": 1,
+    "name": "C5"
+  },
+  {
+    "id": 2,
+    "manufacturerId": 1,
+    "name": "Evasion"
+  },
+  {
+    "id": 3,
+    "manufacturerId": 1,
+    "name": "DS3"
+  },
+  {
+    "id": 4,
+    "manufacturerId": 2,
+    "name": "Altima"
+  },
+  {
+    "id": 5,
+    "manufacturerId": 2,
+    "name": "Navara"
+  },
+  {
+    "id": 6,
+    "manufacturerId": 3,
+    "name": "Tiguan"
+  },
+  {
+    "id": 7,
+    "manufacturerId": 3,
+    "name": "Beetle"
+  },
+  {
+    "id": 8,
+    "manufacturerId": 3,
+    "name": "Jetta" //Jetta V
+  }
+]

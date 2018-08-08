@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_standart">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+
+    <dimen name="pb_size">25dp</dimen>
+
+
+    <!--Font size-->
+    <dimen name="auto_title_font">18sp</dimen>
+    <dimen name="auto_overview_font">16sp</dimen>
+    <dimen name="auto_overview_font_small">12sp</dimen>
+    <dimen name="auto_details_title_font">14sp</dimen>
+    <dimen name="auto_details_font">14sp</dimen>
+    <dimen name="auto_image_size">100dp</dimen>
+    <dimen name="btn_remove_filter_height">40dp</dimen>
+</resources>

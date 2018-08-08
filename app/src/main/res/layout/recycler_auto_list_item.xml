@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="auto"
+            type="com.example.autolist.pattern.models.Automobile"/>
+        <variable
+            name="isExpanded"
+            type="java.lang.Boolean"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/auto_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_standart">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_small"
+                android:text="@{auto.toString()}"
+                style="@style/TextTitleStyle"/>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/auto_image_size"
+                android:layout_height="@dimen/auto_image_size"
+                android:layout_below="@+id/name"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                imageResource="@{auto.imageUrl}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/image"
+                android:layout_alignBottom="@+id/image"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_toStartOf="@+id/btn_edit"
+                android:layout_toEndOf="@+id/image"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_price(auto.price)}"
+                    style="@style/TextOverviewStyle" />
+
+                <TextView
+                    android:id="@+id/year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_year(auto.year)}"
+                    style="@style/TextOverviewStyle" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/btn_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/image"
+                android:layout_centerVertical="false"
+                android:background="@drawable/selector_btn_edit"
+                app:srcCompat="@drawable/ic_edit_black" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/auto_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/auto_overview"
+            android:background="@android:color/darker_gray"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_standart"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/type_coupe"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_type(auto.getTypeCoupe())}" />
+
+                <TextView
+                    android:id="@+id/power"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_power(auto.power)}" />
+
+                <TextView
+                    android:id="@+id/fuel_tank_volume"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_fuel_tank(auto.fuelTankVolume)}" />
+
+                <TextView
+                    android:id="@+id/engine_displacement"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_engine(auto.engineDisplacement)}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/length"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_length(auto.length)}" />
+
+                <TextView
+                    android:id="@+id/width"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_width(auto.width)}" />
+
+                <TextView
+                    android:id="@+id/height"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_height(auto.height)}" />
+
+                <TextView
+                    android:id="@+id/weight"
+                    style="@style/TextDetailsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/value_tv_weight(auto.weight)}" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_extend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/auto_details"
+            android:background="@drawable/selector_btn_extend"
+            app:srcCompat="@drawable/ic_expand_more_black" />
+
+    </RelativeLayout>
+</layout>
