@@ -32,6 +32,8 @@ import butterknife.OnClick;
 import static com.example.autolist.tools.Constants.ARG_SORT_TYPE;
 import static com.example.autolist.tools.Constants.REQUEST_ADD;
 import static com.example.autolist.tools.Constants.REQUEST_SORT_TYPE;
+import static com.example.autolist.tools.Constants.RESULT_ADDED;
+import static com.example.autolist.types.SortTypes.SORT_BY_DATE_ASC;
 
 
 public class AutoListFragment extends Fragment {
@@ -69,6 +71,7 @@ public class AutoListFragment extends Fragment {
         mAutos = App.getDaoSession().getAutomobileDao().loadAll();
         mAdapter = new AutoListAdapter(getActivity(), mRecycler, mAutos);
         mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecycler.setItemViewCacheSize(25);
         mRecycler.setAdapter(mAdapter);
     }
 
@@ -115,7 +118,7 @@ public class AutoListFragment extends Fragment {
                 final List<Automobile> filteredAutoList = filter(mAdapter.getData(), query);
                 mAdapter.replaceAll(filteredAutoList);
                 mBtnRemoveFilter.setVisibility(View.VISIBLE);
-                return true;
+                return false;
             }
 
             @Override
@@ -157,12 +160,22 @@ public class AutoListFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (data != null) {
-            int selectedSortType = data.getIntExtra(ARG_SORT_TYPE, -1);
+        switch (requestCode) {
+            case REQUEST_SORT_TYPE: {
+                switch (resultCode) {
+                    case RESULT_ADDED: {
+                        if (data != null) {
+                            int selectedSortType = data.getIntExtra(ARG_SORT_TYPE, SORT_BY_DATE_ASC);
 
-            List<Automobile> autos = mAdapter.getData();
-            Collections.sort(autos, SortTypes.getComparator(selectedSortType));
-            mAdapter.replaceAll(autos);
+                            List<Automobile> autos = mAdapter.getData();
+                            Collections.sort(autos, SortTypes.getComparator(selectedSortType));
+                            mAdapter.replaceAll(autos);
+                        }
+                        break;
+                    }
+                }
+                break;
+            }
         }
     }
 }

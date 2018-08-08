@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Auto List</string>
     <string name="action_search">Search</string>
+    <string name="action_sort">Sort</string>
     <string name="string_loading">Loading…</string>
 
     <string name="value_tv_price">$%1d</string>
@@ -16,15 +17,15 @@
     <string name="value_tv_engine">Engine: %1d cm3</string>
     <string name="value_tv_power">Power: %1d hp</string>
     <string name="hint_name">Name</string>
-    <string name="hint_price">Price</string>
+    <string name="hint_price">Price ($)</string>
     <string name="hint_year">Year</string>
-    <string name="hint_power">Power</string>
-    <string name="hint_fuel_tank">Fuel tank volume</string>
-    <string name="hint_engine">Engine displacement</string>
-    <string name="hint_length">Length</string>
-    <string name="hint_width">Width</string>
-    <string name="hint_height">Height</string>
-    <string name="hint_weight">Weight</string>
+    <string name="hint_power">Power (hp)</string>
+    <string name="hint_fuel_tank">Fuel tank volume (l)</string>
+    <string name="hint_engine">Engine displacement (cm3)</string>
+    <string name="hint_length">Length (mm)</string>
+    <string name="hint_width">Width (mm)</string>
+    <string name="hint_height">Height (mm)</string>
+    <string name="hint_weight">Weight (mm)</string>
     <string name="hint_type">Type</string>
     <string name="hint_manufacturer">manufacturer…</string>
     <string name="hint_model">model…</string>
@@ -32,12 +33,11 @@
 
     <string name="warning_wrong_value">You must input ALL values!</string>
     <string name="string_remove_filter">Remove filter</string>
-    <string name="action_sort">Sort</string>
     <string name="string_sort_price_asc">Price ASC</string>
     <string name="string_sort_price_desc">Price DESC</string>
     <string name="string_sort_date_asc">Adding Date ASC</string>
     <string name="string_sort_date_desc">Adding Date DESC</string>
-    <string name="title_sort_by">Sort by...</string>
     <string name="string_saved">Saved</string>
+    <string name="title_sort_by">Sort by…</string>
     <string name="title_enter_url">Enter url:</string>
 </resources>

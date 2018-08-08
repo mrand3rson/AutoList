@@ -132,10 +132,10 @@ public class AutoEditFragment extends MvpAppCompatFragment implements AutoEdit {
             mHeightView.setText(String.valueOf(mAuto.getHeight()));
             mWeightView.setText(String.valueOf(mAuto.getWeight()));
 
-            String url = mAuto.getImageUrl();
-            if (url != null) {
+            imageUrl = mAuto.getImageUrl();
+            if (imageUrl != null) {
                 Picasso.with(getActivity())
-                        .load(url)
+                        .load(imageUrl)
                         .into(mImage);
             }
         }
